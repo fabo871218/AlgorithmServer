@@ -1,6 +1,7 @@
 #ifndef _COM_DEFINE_H_
 #define _COM_DEFINE_H_
 
+#include <map>
 #include <memory>
 #include <string>
 #include <vector>

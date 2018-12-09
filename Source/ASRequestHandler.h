@@ -1,21 +1,25 @@
 #ifndef _AS_REQUEST_HANDLER_H_
 #define _AS_REQUEST_HANDLER_H_
 
-#include <Poco/Net/HTTPRequest.h>
+#include <Poco/Net/HTTPRequestHandler.h>
 
-class ASRequestDetect : public Poco::Net::HTTPRequest{
+class ASRequestDetect : public Poco::Net::HTTPRequestHandler{
 public:
     ASRequestDetect() = default;
-    ~ASRequestDetect() = default;
+    virtual ~ASRequestDetect() = default;
+
+	virtual void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
 
 private:
 
 };
 
-class ASRequestException : public Poco::Net::HTTPRequest{
+class ASRequestException : public Poco::Net::HTTPRequestHandler{
 public:
     ASRequestException() = default;
-    ~ASRequestException() = default;
+    virtual ~ASRequestException() = default;
+
+	virtual void handleRequest(Poco::Net::HTTPServerRequest& request, Poco::Net::HTTPServerResponse& response);
 };
 
 #endif /*_AS_REQUEST_HANDLER_H_*/
